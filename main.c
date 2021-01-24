@@ -12,13 +12,13 @@
 #include "project.h"
 
 uint16_t delay;
-
+uint8 a;
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
     Timer_Start();
     LCD_Init();
-    
+    a=a;
     LCD_Position(0, 0);
     LCD_PrintString("Distance:");
     CyDelay(1000);
