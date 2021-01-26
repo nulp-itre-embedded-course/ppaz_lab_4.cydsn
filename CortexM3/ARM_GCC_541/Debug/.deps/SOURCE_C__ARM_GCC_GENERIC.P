@@ -1,0 +1,62 @@
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Control.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyDmac.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyFlash.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyLib.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CySpc.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Echo.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Echo_aliases.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Timer.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Trig.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Trig_aliases.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_armcc.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_compiler.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_gcc.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/core_cm3.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyPm.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydevice.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydisabledsheets.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyfitter.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cypins.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cytypes.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/project.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/timer_clock.h D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/main.c 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Control.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Echo.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Echo_aliases.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Timer.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Trig.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/Trig_aliases.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/project.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/Generated_Source/PSoC5/timer_clock.h : 
+
+D:/PAZ_lab/lab_1/ppaz_lab_4.cydsn/main.c : 
+
