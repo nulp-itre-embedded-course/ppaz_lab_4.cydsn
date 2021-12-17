@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|37ef50b7-1c51-4c4b-aafd-c5e716e0aaae
+C:\Users\oleksandr\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|6d9c2eb1-bfc4-471a-b1a7-a2d7db3d88a7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8c693079-3045-4a27-b91d-1ff7494afd19
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1cc430ee-a7e7-4bcc-854e-8d34d79633dd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8f11ff11-c317-4dd2-be09-53092e0acd68
+C:\Users\oleksandr\Desktop\PAZ\UltrasonicRangingModule.cydsn\UltrasonicRangingModule.cyprj|234a69a6-35d6-4f6d-ab62-8d45b4f5a920
