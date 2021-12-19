@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Ultrasonic\PPAZ-4\Source Files\main.c">
+<ExpandedNodeIds>
+<v>Ultrasonic</v>
+<v>Ultrasonic\PPAZ-4</v>
+<v>Ultrasonic\PPAZ-4\TopDesign</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Pins</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Analog</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Clocks</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Interrupts</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\DMA</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\System</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Directives</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\Flash Security</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.cydwr\EEPROM</v>
+<v>Ultrasonic\PPAZ-4\Header Files</v>
+<v>Ultrasonic\PPAZ-4\Header Files\cyapicallbacks.h</v>
+<v>Ultrasonic\PPAZ-4\Source Files</v>
+<v>Ultrasonic\PPAZ-4\Source Files\main.c</v>
+<v>Ultrasonic\PPAZ-4\Generated_Source</v>
+<v>Ultrasonic\PPAZ-4\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Ultrasonic</v>
+<v>Ultrasonic\PPAZ-4</v>
+<v>Ultrasonic\PPAZ-4\TopDesign</v>
+<v>Ultrasonic\PPAZ-4\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Ultrasonic</v>
+<v>Ultrasonic\PPAZ-4</v>
+<v>Ultrasonic\PPAZ-4\CortexM3</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Control.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_PM.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Echo.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_Char_1.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_Char_1_LCDPort.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_Char_1_PM.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\Listing Files\Trig.lst</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\PPAZ-4.elf</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\PPAZ-4.hex</v>
+<v>Ultrasonic\PPAZ-4\CortexM3\ARM_GCC_541\Debug\PPAZ-4.map</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.gpdsc</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4.rpt</v>
+<v>Ultrasonic\PPAZ-4\PPAZ-4_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Ultrasonic</v>
+<v>Ultrasonic\PPAZ-4</v>
+<v>Ultrasonic\PPAZ-4\PSoC 5LP Architecture TRM</v>
+<v>Ultrasonic\PPAZ-4\CY8C58LP Family Datasheet</v>
+<v>Ultrasonic\PPAZ-4\System Reference Guides</v>
+<v>Ultrasonic\PPAZ-4\System Reference Guides\cy_boot_v6_0</v>
+<v>Ultrasonic\PPAZ-4\CharLCD_v2_20.pdf</v>
+<v>Ultrasonic\PPAZ-4\cy_clock_v2_20.pdf</v>
+<v>Ultrasonic\PPAZ-4\cy_pins_v2_20</v>
+<v>Ultrasonic\PPAZ-4\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Ultrasonic\PPAZ-4\CyControlReg_v1_80.pdf</v>
+<v>Ultrasonic\PPAZ-4\Timer_v2_80.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\PPAZ-4.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\PPAZ-4.cydsn\PPAZ-4.cydwr" />
+<name v=".\PPAZ-4.cydsn\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 495" SelectedTabbedMdiWindow="d6c47769-cd39-42f9-adb0-923fec00ddd4"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="32b31d90-8199-4009-b7f1-e9396eda33fb" /><DocumentWindow Key="C:\Users\slavi\Documents\PSoC Creator\Ultrasonic\PPAZ-4.cydsn\TopDesign\TopDesign.cysch" Guid="b77700df-ea08-4e5f-b77c-dfded69137c6" /><DocumentWindow Key="C:\Users\slavi\Documents\PSoC Creator\Ultrasonic\PPAZ-4.cydsn\PPAZ-4.cydwr" Guid="6db0d750-7460-4b1a-a22d-09be9f1f4455" /><DocumentWindow Key="C:\Users\slavi\Documents\PSoC Creator\Ultrasonic\PPAZ-4.cydsn\main.c" Guid="d6c47769-cd39-42f9-adb0-923fec00ddd4" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

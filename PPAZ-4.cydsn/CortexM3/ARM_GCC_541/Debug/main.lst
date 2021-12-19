@@ -1,0 +1,965 @@
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** 
+   2:main.c        **** #include "project.h"
+   3:main.c        **** 
+   4:main.c        **** int main(void)
+   5:main.c        **** {
+  28              		.loc 1 5 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   6:main.c        ****     CyGlobalIntEnable; 
+  36              		.loc 1 6 0
+  37              		.syntax unified
+  38              	@ 6 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+  41              	.LVL0:
+   7:main.c        ****     uint16 delay = 0;
+   8:main.c        ****     Timer_1_Start();
+  42              		.loc 1 8 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 FFF7FEFF 		bl	Timer_1_Start
+  46              	.LVL1:
+   9:main.c        ****     LCD_Char_1_Init();
+  47              		.loc 1 9 0
+  48 0008 FFF7FEFF 		bl	LCD_Char_1_Init
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 2
+
+
+  49              	.LVL2:
+  50              	.L3:
+  10:main.c        ****     
+  11:main.c        **** 
+  12:main.c        ****     for(;;)
+  13:main.c        ****     {
+  14:main.c        ****         Control_Write(0);
+  51              		.loc 1 14 0
+  52 000c 0020     		movs	r0, #0
+  53 000e FFF7FEFF 		bl	Control_Write
+  54              	.LVL3:
+  15:main.c        ****         CyDelayUs(2u);
+  55              		.loc 1 15 0
+  56 0012 0220     		movs	r0, #2
+  57 0014 FFF7FEFF 		bl	CyDelayUs
+  58              	.LVL4:
+  16:main.c        ****         Control_Write(1);
+  59              		.loc 1 16 0
+  60 0018 0120     		movs	r0, #1
+  61 001a FFF7FEFF 		bl	Control_Write
+  62              	.LVL5:
+  17:main.c        ****         CyDelayUs(10u);
+  63              		.loc 1 17 0
+  64 001e 0A20     		movs	r0, #10
+  65 0020 FFF7FEFF 		bl	CyDelayUs
+  66              	.LVL6:
+  18:main.c        ****         Control_Write(0);
+  67              		.loc 1 18 0
+  68 0024 0020     		movs	r0, #0
+  69 0026 FFF7FEFF 		bl	Control_Write
+  70              	.LVL7:
+  19:main.c        ****         CyDelayUs(500u);
+  71              		.loc 1 19 0
+  72 002a 4FF4FA70 		mov	r0, #500
+  73 002e FFF7FEFF 		bl	CyDelayUs
+  74              	.LVL8:
+  75              	.L2:
+  20:main.c        ****         
+  21:main.c        ****         while (Echo_Read()==1){}
+  76              		.loc 1 21 0 discriminator 1
+  77 0032 FFF7FEFF 		bl	Echo_Read
+  78              	.LVL9:
+  79 0036 0128     		cmp	r0, #1
+  80 0038 FBD0     		beq	.L2
+  22:main.c        ****         
+  23:main.c        ****         delay=(65535 - Timer_1_ReadCounter())/58;
+  81              		.loc 1 23 0
+  82 003a FFF7FEFF 		bl	Timer_1_ReadCounter
+  83              	.LVL10:
+  84 003e C0F57F40 		rsb	r0, r0, #65280
+  85 0042 FF30     		adds	r0, r0, #255
+  86 0044 104C     		ldr	r4, .L5
+  87 0046 84FB0034 		smull	r3, r4, r4, r0
+  88 004a 0444     		add	r4, r4, r0
+  89 004c C017     		asrs	r0, r0, #31
+  90 004e C0EB6414 		rsb	r4, r0, r4, asr #5
+  91              	.LVL11:
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 3
+
+
+  24:main.c        ****         
+  25:main.c        ****         LCD_Char_1_Position(0,0);
+  92              		.loc 1 25 0
+  93 0052 0021     		movs	r1, #0
+  94 0054 0846     		mov	r0, r1
+  95 0056 FFF7FEFF 		bl	LCD_Char_1_Position
+  96              	.LVL12:
+  26:main.c        ****         LCD_Char_1_PrintString("Distance");
+  97              		.loc 1 26 0
+  98 005a 0C48     		ldr	r0, .L5+4
+  99 005c FFF7FEFF 		bl	LCD_Char_1_PrintString
+ 100              	.LVL13:
+  27:main.c        ****         LCD_Char_1_Position(1,0);
+ 101              		.loc 1 27 0
+ 102 0060 0021     		movs	r1, #0
+ 103 0062 0120     		movs	r0, #1
+ 104 0064 FFF7FEFF 		bl	LCD_Char_1_Position
+ 105              	.LVL14:
+  28:main.c        ****         LCD_Char_1_PrintString("                ");
+ 106              		.loc 1 28 0
+ 107 0068 0948     		ldr	r0, .L5+8
+ 108 006a FFF7FEFF 		bl	LCD_Char_1_PrintString
+ 109              	.LVL15:
+  29:main.c        ****         LCD_Char_1_Position(1,0);
+ 110              		.loc 1 29 0
+ 111 006e 0021     		movs	r1, #0
+ 112 0070 0120     		movs	r0, #1
+ 113 0072 FFF7FEFF 		bl	LCD_Char_1_Position
+ 114              	.LVL16:
+  30:main.c        ****         LCD_Char_1_PrintNumber(delay);
+ 115              		.loc 1 30 0
+ 116 0076 A0B2     		uxth	r0, r4
+ 117 0078 FFF7FEFF 		bl	LCD_Char_1_PrintU32Number
+ 118              	.LVL17:
+  31:main.c        ****         CyDelay(1000);
+ 119              		.loc 1 31 0
+ 120 007c 4FF47A70 		mov	r0, #1000
+ 121 0080 FFF7FEFF 		bl	CyDelay
+ 122              	.LVL18:
+  32:main.c        ****         
+  33:main.c        ****        
+  34:main.c        ****     }
+ 123              		.loc 1 34 0
+ 124 0084 C2E7     		b	.L3
+ 125              	.L6:
+ 126 0086 00BF     		.align	2
+ 127              	.L5:
+ 128 0088 09CB3D8D 		.word	-1925330167
+ 129 008c 00000000 		.word	.LC0
+ 130 0090 0C000000 		.word	.LC1
+ 131              		.cfi_endproc
+ 132              	.LFE63:
+ 133              		.size	main, .-main
+ 134              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 135              		.align	2
+ 136              	.LC0:
+ 137 0000 44697374 		.ascii	"Distance\000"
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 4
+
+
+ 137      616E6365 
+ 137      00
+ 138 0009 000000   		.space	3
+ 139              	.LC1:
+ 140 000c 20202020 		.ascii	"                \000"
+ 140      20202020 
+ 140      20202020 
+ 140      20202020 
+ 140      00
+ 141              		.text
+ 142              	.Letext0:
+ 143              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 144              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 145              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 146              		.file 5 "Generated_Source\\PSoC5/Timer_1.h"
+ 147              		.file 6 "Generated_Source\\PSoC5/LCD_Char_1.h"
+ 148              		.file 7 "Generated_Source\\PSoC5/Control.h"
+ 149              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 150              		.file 9 "Generated_Source\\PSoC5/Echo.h"
+ 151              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
+ 152              		.section	.debug_info,"",%progbits
+ 153              	.Ldebug_info0:
+ 154 0000 8C020000 		.4byte	0x28c
+ 155 0004 0400     		.2byte	0x4
+ 156 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 157 000a 04       		.byte	0x4
+ 158 000b 01       		.uleb128 0x1
+ 159 000c 98000000 		.4byte	.LASF27
+ 160 0010 0C       		.byte	0xc
+ 161 0011 D9010000 		.4byte	.LASF28
+ 162 0015 0E000000 		.4byte	.LASF29
+ 163 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 164 001d 00000000 		.4byte	0
+ 165 0021 00000000 		.4byte	.Ldebug_line0
+ 166 0025 02       		.uleb128 0x2
+ 167 0026 01       		.byte	0x1
+ 168 0027 06       		.byte	0x6
+ 169 0028 3C020000 		.4byte	.LASF0
+ 170 002c 02       		.uleb128 0x2
+ 171 002d 01       		.byte	0x1
+ 172 002e 08       		.byte	0x8
+ 173 002f 58010000 		.4byte	.LASF1
+ 174 0033 02       		.uleb128 0x2
+ 175 0034 02       		.byte	0x2
+ 176 0035 05       		.byte	0x5
+ 177 0036 1D020000 		.4byte	.LASF2
+ 178 003a 02       		.uleb128 0x2
+ 179 003b 02       		.byte	0x2
+ 180 003c 07       		.byte	0x7
+ 181 003d 38010000 		.4byte	.LASF3
+ 182 0041 03       		.uleb128 0x3
+ 183 0042 4C000000 		.4byte	.LASF9
+ 184 0046 02       		.byte	0x2
+ 185 0047 3F       		.byte	0x3f
+ 186 0048 4C000000 		.4byte	0x4c
+ 187 004c 02       		.uleb128 0x2
+ 188 004d 04       		.byte	0x4
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 5
+
+
+ 189 004e 05       		.byte	0x5
+ 190 004f 27020000 		.4byte	.LASF4
+ 191 0053 02       		.uleb128 0x2
+ 192 0054 04       		.byte	0x4
+ 193 0055 07       		.byte	0x7
+ 194 0056 26010000 		.4byte	.LASF5
+ 195 005a 02       		.uleb128 0x2
+ 196 005b 08       		.byte	0x8
+ 197 005c 05       		.byte	0x5
+ 198 005d CB010000 		.4byte	.LASF6
+ 199 0061 02       		.uleb128 0x2
+ 200 0062 08       		.byte	0x8
+ 201 0063 07       		.byte	0x7
+ 202 0064 64000000 		.4byte	.LASF7
+ 203 0068 04       		.uleb128 0x4
+ 204 0069 04       		.byte	0x4
+ 205 006a 05       		.byte	0x5
+ 206 006b 696E7400 		.ascii	"int\000"
+ 207 006f 02       		.uleb128 0x2
+ 208 0070 04       		.byte	0x4
+ 209 0071 07       		.byte	0x7
+ 210 0072 83010000 		.4byte	.LASF8
+ 211 0076 03       		.uleb128 0x3
+ 212 0077 56000000 		.4byte	.LASF10
+ 213 007b 03       		.byte	0x3
+ 214 007c 2C       		.byte	0x2c
+ 215 007d 41000000 		.4byte	0x41
+ 216 0081 05       		.uleb128 0x5
+ 217 0082 6D010000 		.4byte	.LASF11
+ 218 0086 04       		.byte	0x4
+ 219 0087 E901     		.2byte	0x1e9
+ 220 0089 3A000000 		.4byte	0x3a
+ 221 008d 02       		.uleb128 0x2
+ 222 008e 04       		.byte	0x4
+ 223 008f 04       		.byte	0x4
+ 224 0090 5E000000 		.4byte	.LASF12
+ 225 0094 02       		.uleb128 0x2
+ 226 0095 08       		.byte	0x8
+ 227 0096 04       		.byte	0x4
+ 228 0097 66010000 		.4byte	.LASF13
+ 229 009b 02       		.uleb128 0x2
+ 230 009c 01       		.byte	0x1
+ 231 009d 08       		.byte	0x8
+ 232 009e E0010000 		.4byte	.LASF14
+ 233 00a2 02       		.uleb128 0x2
+ 234 00a3 08       		.byte	0x8
+ 235 00a4 04       		.byte	0x4
+ 236 00a5 30020000 		.4byte	.LASF15
+ 237 00a9 02       		.uleb128 0x2
+ 238 00aa 04       		.byte	0x4
+ 239 00ab 07       		.byte	0x7
+ 240 00ac C2010000 		.4byte	.LASF16
+ 241 00b0 06       		.uleb128 0x6
+ 242 00b1 74010000 		.4byte	.LASF30
+ 243 00b5 01       		.byte	0x1
+ 244 00b6 04       		.byte	0x4
+ 245 00b7 68000000 		.4byte	0x68
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 6
+
+
+ 246 00bb 00000000 		.4byte	.LFB63
+ 247 00bf 94000000 		.4byte	.LFE63-.LFB63
+ 248 00c3 01       		.uleb128 0x1
+ 249 00c4 9C       		.byte	0x9c
+ 250 00c5 10020000 		.4byte	0x210
+ 251 00c9 07       		.uleb128 0x7
+ 252 00ca 7B000000 		.4byte	.LASF31
+ 253 00ce 01       		.byte	0x1
+ 254 00cf 07       		.byte	0x7
+ 255 00d0 81000000 		.4byte	0x81
+ 256 00d4 00000000 		.4byte	.LLST0
+ 257 00d8 08       		.uleb128 0x8
+ 258 00d9 08000000 		.4byte	.LVL1
+ 259 00dd 21020000 		.4byte	0x221
+ 260 00e1 08       		.uleb128 0x8
+ 261 00e2 0C000000 		.4byte	.LVL2
+ 262 00e6 2C020000 		.4byte	0x22c
+ 263 00ea 09       		.uleb128 0x9
+ 264 00eb 12000000 		.4byte	.LVL3
+ 265 00ef 37020000 		.4byte	0x237
+ 266 00f3 FD000000 		.4byte	0xfd
+ 267 00f7 0A       		.uleb128 0xa
+ 268 00f8 01       		.uleb128 0x1
+ 269 00f9 50       		.byte	0x50
+ 270 00fa 01       		.uleb128 0x1
+ 271 00fb 30       		.byte	0x30
+ 272 00fc 00       		.byte	0
+ 273 00fd 09       		.uleb128 0x9
+ 274 00fe 18000000 		.4byte	.LVL4
+ 275 0102 42020000 		.4byte	0x242
+ 276 0106 10010000 		.4byte	0x110
+ 277 010a 0A       		.uleb128 0xa
+ 278 010b 01       		.uleb128 0x1
+ 279 010c 50       		.byte	0x50
+ 280 010d 01       		.uleb128 0x1
+ 281 010e 32       		.byte	0x32
+ 282 010f 00       		.byte	0
+ 283 0110 09       		.uleb128 0x9
+ 284 0111 1E000000 		.4byte	.LVL5
+ 285 0115 37020000 		.4byte	0x237
+ 286 0119 23010000 		.4byte	0x123
+ 287 011d 0A       		.uleb128 0xa
+ 288 011e 01       		.uleb128 0x1
+ 289 011f 50       		.byte	0x50
+ 290 0120 01       		.uleb128 0x1
+ 291 0121 31       		.byte	0x31
+ 292 0122 00       		.byte	0
+ 293 0123 09       		.uleb128 0x9
+ 294 0124 24000000 		.4byte	.LVL6
+ 295 0128 42020000 		.4byte	0x242
+ 296 012c 36010000 		.4byte	0x136
+ 297 0130 0A       		.uleb128 0xa
+ 298 0131 01       		.uleb128 0x1
+ 299 0132 50       		.byte	0x50
+ 300 0133 01       		.uleb128 0x1
+ 301 0134 3A       		.byte	0x3a
+ 302 0135 00       		.byte	0
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 7
+
+
+ 303 0136 09       		.uleb128 0x9
+ 304 0137 2A000000 		.4byte	.LVL7
+ 305 013b 37020000 		.4byte	0x237
+ 306 013f 49010000 		.4byte	0x149
+ 307 0143 0A       		.uleb128 0xa
+ 308 0144 01       		.uleb128 0x1
+ 309 0145 50       		.byte	0x50
+ 310 0146 01       		.uleb128 0x1
+ 311 0147 30       		.byte	0x30
+ 312 0148 00       		.byte	0
+ 313 0149 09       		.uleb128 0x9
+ 314 014a 32000000 		.4byte	.LVL8
+ 315 014e 42020000 		.4byte	0x242
+ 316 0152 5E010000 		.4byte	0x15e
+ 317 0156 0A       		.uleb128 0xa
+ 318 0157 01       		.uleb128 0x1
+ 319 0158 50       		.byte	0x50
+ 320 0159 03       		.uleb128 0x3
+ 321 015a 0A       		.byte	0xa
+ 322 015b F401     		.2byte	0x1f4
+ 323 015d 00       		.byte	0
+ 324 015e 08       		.uleb128 0x8
+ 325 015f 36000000 		.4byte	.LVL9
+ 326 0163 4D020000 		.4byte	0x24d
+ 327 0167 08       		.uleb128 0x8
+ 328 0168 3E000000 		.4byte	.LVL10
+ 329 016c 58020000 		.4byte	0x258
+ 330 0170 09       		.uleb128 0x9
+ 331 0171 5A000000 		.4byte	.LVL12
+ 332 0175 63020000 		.4byte	0x263
+ 333 0179 88010000 		.4byte	0x188
+ 334 017d 0A       		.uleb128 0xa
+ 335 017e 01       		.uleb128 0x1
+ 336 017f 50       		.byte	0x50
+ 337 0180 01       		.uleb128 0x1
+ 338 0181 30       		.byte	0x30
+ 339 0182 0A       		.uleb128 0xa
+ 340 0183 01       		.uleb128 0x1
+ 341 0184 51       		.byte	0x51
+ 342 0185 01       		.uleb128 0x1
+ 343 0186 30       		.byte	0x30
+ 344 0187 00       		.byte	0
+ 345 0188 09       		.uleb128 0x9
+ 346 0189 60000000 		.4byte	.LVL13
+ 347 018d 6E020000 		.4byte	0x26e
+ 348 0191 9F010000 		.4byte	0x19f
+ 349 0195 0A       		.uleb128 0xa
+ 350 0196 01       		.uleb128 0x1
+ 351 0197 50       		.byte	0x50
+ 352 0198 05       		.uleb128 0x5
+ 353 0199 03       		.byte	0x3
+ 354 019a 00000000 		.4byte	.LC0
+ 355 019e 00       		.byte	0
+ 356 019f 09       		.uleb128 0x9
+ 357 01a0 68000000 		.4byte	.LVL14
+ 358 01a4 63020000 		.4byte	0x263
+ 359 01a8 B7010000 		.4byte	0x1b7
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 8
+
+
+ 360 01ac 0A       		.uleb128 0xa
+ 361 01ad 01       		.uleb128 0x1
+ 362 01ae 50       		.byte	0x50
+ 363 01af 01       		.uleb128 0x1
+ 364 01b0 31       		.byte	0x31
+ 365 01b1 0A       		.uleb128 0xa
+ 366 01b2 01       		.uleb128 0x1
+ 367 01b3 51       		.byte	0x51
+ 368 01b4 01       		.uleb128 0x1
+ 369 01b5 30       		.byte	0x30
+ 370 01b6 00       		.byte	0
+ 371 01b7 09       		.uleb128 0x9
+ 372 01b8 6E000000 		.4byte	.LVL15
+ 373 01bc 6E020000 		.4byte	0x26e
+ 374 01c0 CE010000 		.4byte	0x1ce
+ 375 01c4 0A       		.uleb128 0xa
+ 376 01c5 01       		.uleb128 0x1
+ 377 01c6 50       		.byte	0x50
+ 378 01c7 05       		.uleb128 0x5
+ 379 01c8 03       		.byte	0x3
+ 380 01c9 0C000000 		.4byte	.LC1
+ 381 01cd 00       		.byte	0
+ 382 01ce 09       		.uleb128 0x9
+ 383 01cf 76000000 		.4byte	.LVL16
+ 384 01d3 63020000 		.4byte	0x263
+ 385 01d7 E6010000 		.4byte	0x1e6
+ 386 01db 0A       		.uleb128 0xa
+ 387 01dc 01       		.uleb128 0x1
+ 388 01dd 50       		.byte	0x50
+ 389 01de 01       		.uleb128 0x1
+ 390 01df 31       		.byte	0x31
+ 391 01e0 0A       		.uleb128 0xa
+ 392 01e1 01       		.uleb128 0x1
+ 393 01e2 51       		.byte	0x51
+ 394 01e3 01       		.uleb128 0x1
+ 395 01e4 30       		.byte	0x30
+ 396 01e5 00       		.byte	0
+ 397 01e6 09       		.uleb128 0x9
+ 398 01e7 7C000000 		.4byte	.LVL17
+ 399 01eb 79020000 		.4byte	0x279
+ 400 01ef FE010000 		.4byte	0x1fe
+ 401 01f3 0A       		.uleb128 0xa
+ 402 01f4 01       		.uleb128 0x1
+ 403 01f5 50       		.byte	0x50
+ 404 01f6 06       		.uleb128 0x6
+ 405 01f7 74       		.byte	0x74
+ 406 01f8 00       		.sleb128 0
+ 407 01f9 0A       		.byte	0xa
+ 408 01fa FFFF     		.2byte	0xffff
+ 409 01fc 1A       		.byte	0x1a
+ 410 01fd 00       		.byte	0
+ 411 01fe 0B       		.uleb128 0xb
+ 412 01ff 84000000 		.4byte	.LVL18
+ 413 0203 84020000 		.4byte	0x284
+ 414 0207 0A       		.uleb128 0xa
+ 415 0208 01       		.uleb128 0x1
+ 416 0209 50       		.byte	0x50
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 9
+
+
+ 417 020a 03       		.uleb128 0x3
+ 418 020b 0A       		.byte	0xa
+ 419 020c E803     		.2byte	0x3e8
+ 420 020e 00       		.byte	0
+ 421 020f 00       		.byte	0
+ 422 0210 0C       		.uleb128 0xc
+ 423 0211 4B010000 		.4byte	.LASF32
+ 424 0215 0A       		.byte	0xa
+ 425 0216 1207     		.2byte	0x712
+ 426 0218 1C020000 		.4byte	0x21c
+ 427 021c 0D       		.uleb128 0xd
+ 428 021d 76000000 		.4byte	0x76
+ 429 0221 0E       		.uleb128 0xe
+ 430 0222 00000000 		.4byte	.LASF17
+ 431 0226 00000000 		.4byte	.LASF17
+ 432 022a 05       		.byte	0x5
+ 433 022b 5A       		.byte	0x5a
+ 434 022c 0E       		.uleb128 0xe
+ 435 022d 0D020000 		.4byte	.LASF18
+ 436 0231 0D020000 		.4byte	.LASF18
+ 437 0235 06       		.byte	0x6
+ 438 0236 36       		.byte	0x36
+ 439 0237 0E       		.uleb128 0xe
+ 440 0238 B4010000 		.4byte	.LASF19
+ 441 023c B4010000 		.4byte	.LASF19
+ 442 0240 07       		.byte	0x7
+ 443 0241 2F       		.byte	0x2f
+ 444 0242 0E       		.uleb128 0xe
+ 445 0243 79010000 		.4byte	.LASF20
+ 446 0247 79010000 		.4byte	.LASF20
+ 447 024b 08       		.byte	0x8
+ 448 024c 77       		.byte	0x77
+ 449 024d 0E       		.uleb128 0xe
+ 450 024e 90010000 		.4byte	.LASF21
+ 451 0252 90010000 		.4byte	.LASF21
+ 452 0256 09       		.byte	0x9
+ 453 0257 29       		.byte	0x29
+ 454 0258 0E       		.uleb128 0xe
+ 455 0259 E5010000 		.4byte	.LASF22
+ 456 025d E5010000 		.4byte	.LASF22
+ 457 0261 05       		.byte	0x5
+ 458 0262 69       		.byte	0x69
+ 459 0263 0E       		.uleb128 0xe
+ 460 0264 F9010000 		.4byte	.LASF23
+ 461 0268 F9010000 		.4byte	.LASF23
+ 462 026c 06       		.byte	0x6
+ 463 026d 3D       		.byte	0x3d
+ 464 026e 0E       		.uleb128 0xe
+ 465 026f 81000000 		.4byte	.LASF24
+ 466 0273 81000000 		.4byte	.LASF24
+ 467 0277 06       		.byte	0x6
+ 468 0278 3C       		.byte	0x3c
+ 469 0279 0E       		.uleb128 0xe
+ 470 027a 9A010000 		.4byte	.LASF25
+ 471 027e 9A010000 		.4byte	.LASF25
+ 472 0282 06       		.byte	0x6
+ 473 0283 61       		.byte	0x61
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 10
+
+
+ 474 0284 0E       		.uleb128 0xe
+ 475 0285 48020000 		.4byte	.LASF26
+ 476 0289 48020000 		.4byte	.LASF26
+ 477 028d 08       		.byte	0x8
+ 478 028e 76       		.byte	0x76
+ 479 028f 00       		.byte	0
+ 480              		.section	.debug_abbrev,"",%progbits
+ 481              	.Ldebug_abbrev0:
+ 482 0000 01       		.uleb128 0x1
+ 483 0001 11       		.uleb128 0x11
+ 484 0002 01       		.byte	0x1
+ 485 0003 25       		.uleb128 0x25
+ 486 0004 0E       		.uleb128 0xe
+ 487 0005 13       		.uleb128 0x13
+ 488 0006 0B       		.uleb128 0xb
+ 489 0007 03       		.uleb128 0x3
+ 490 0008 0E       		.uleb128 0xe
+ 491 0009 1B       		.uleb128 0x1b
+ 492 000a 0E       		.uleb128 0xe
+ 493 000b 55       		.uleb128 0x55
+ 494 000c 17       		.uleb128 0x17
+ 495 000d 11       		.uleb128 0x11
+ 496 000e 01       		.uleb128 0x1
+ 497 000f 10       		.uleb128 0x10
+ 498 0010 17       		.uleb128 0x17
+ 499 0011 00       		.byte	0
+ 500 0012 00       		.byte	0
+ 501 0013 02       		.uleb128 0x2
+ 502 0014 24       		.uleb128 0x24
+ 503 0015 00       		.byte	0
+ 504 0016 0B       		.uleb128 0xb
+ 505 0017 0B       		.uleb128 0xb
+ 506 0018 3E       		.uleb128 0x3e
+ 507 0019 0B       		.uleb128 0xb
+ 508 001a 03       		.uleb128 0x3
+ 509 001b 0E       		.uleb128 0xe
+ 510 001c 00       		.byte	0
+ 511 001d 00       		.byte	0
+ 512 001e 03       		.uleb128 0x3
+ 513 001f 16       		.uleb128 0x16
+ 514 0020 00       		.byte	0
+ 515 0021 03       		.uleb128 0x3
+ 516 0022 0E       		.uleb128 0xe
+ 517 0023 3A       		.uleb128 0x3a
+ 518 0024 0B       		.uleb128 0xb
+ 519 0025 3B       		.uleb128 0x3b
+ 520 0026 0B       		.uleb128 0xb
+ 521 0027 49       		.uleb128 0x49
+ 522 0028 13       		.uleb128 0x13
+ 523 0029 00       		.byte	0
+ 524 002a 00       		.byte	0
+ 525 002b 04       		.uleb128 0x4
+ 526 002c 24       		.uleb128 0x24
+ 527 002d 00       		.byte	0
+ 528 002e 0B       		.uleb128 0xb
+ 529 002f 0B       		.uleb128 0xb
+ 530 0030 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 11
+
+
+ 531 0031 0B       		.uleb128 0xb
+ 532 0032 03       		.uleb128 0x3
+ 533 0033 08       		.uleb128 0x8
+ 534 0034 00       		.byte	0
+ 535 0035 00       		.byte	0
+ 536 0036 05       		.uleb128 0x5
+ 537 0037 16       		.uleb128 0x16
+ 538 0038 00       		.byte	0
+ 539 0039 03       		.uleb128 0x3
+ 540 003a 0E       		.uleb128 0xe
+ 541 003b 3A       		.uleb128 0x3a
+ 542 003c 0B       		.uleb128 0xb
+ 543 003d 3B       		.uleb128 0x3b
+ 544 003e 05       		.uleb128 0x5
+ 545 003f 49       		.uleb128 0x49
+ 546 0040 13       		.uleb128 0x13
+ 547 0041 00       		.byte	0
+ 548 0042 00       		.byte	0
+ 549 0043 06       		.uleb128 0x6
+ 550 0044 2E       		.uleb128 0x2e
+ 551 0045 01       		.byte	0x1
+ 552 0046 3F       		.uleb128 0x3f
+ 553 0047 19       		.uleb128 0x19
+ 554 0048 03       		.uleb128 0x3
+ 555 0049 0E       		.uleb128 0xe
+ 556 004a 3A       		.uleb128 0x3a
+ 557 004b 0B       		.uleb128 0xb
+ 558 004c 3B       		.uleb128 0x3b
+ 559 004d 0B       		.uleb128 0xb
+ 560 004e 27       		.uleb128 0x27
+ 561 004f 19       		.uleb128 0x19
+ 562 0050 49       		.uleb128 0x49
+ 563 0051 13       		.uleb128 0x13
+ 564 0052 8701     		.uleb128 0x87
+ 565 0054 19       		.uleb128 0x19
+ 566 0055 11       		.uleb128 0x11
+ 567 0056 01       		.uleb128 0x1
+ 568 0057 12       		.uleb128 0x12
+ 569 0058 06       		.uleb128 0x6
+ 570 0059 40       		.uleb128 0x40
+ 571 005a 18       		.uleb128 0x18
+ 572 005b 9742     		.uleb128 0x2117
+ 573 005d 19       		.uleb128 0x19
+ 574 005e 01       		.uleb128 0x1
+ 575 005f 13       		.uleb128 0x13
+ 576 0060 00       		.byte	0
+ 577 0061 00       		.byte	0
+ 578 0062 07       		.uleb128 0x7
+ 579 0063 34       		.uleb128 0x34
+ 580 0064 00       		.byte	0
+ 581 0065 03       		.uleb128 0x3
+ 582 0066 0E       		.uleb128 0xe
+ 583 0067 3A       		.uleb128 0x3a
+ 584 0068 0B       		.uleb128 0xb
+ 585 0069 3B       		.uleb128 0x3b
+ 586 006a 0B       		.uleb128 0xb
+ 587 006b 49       		.uleb128 0x49
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 12
+
+
+ 588 006c 13       		.uleb128 0x13
+ 589 006d 02       		.uleb128 0x2
+ 590 006e 17       		.uleb128 0x17
+ 591 006f 00       		.byte	0
+ 592 0070 00       		.byte	0
+ 593 0071 08       		.uleb128 0x8
+ 594 0072 898201   		.uleb128 0x4109
+ 595 0075 00       		.byte	0
+ 596 0076 11       		.uleb128 0x11
+ 597 0077 01       		.uleb128 0x1
+ 598 0078 31       		.uleb128 0x31
+ 599 0079 13       		.uleb128 0x13
+ 600 007a 00       		.byte	0
+ 601 007b 00       		.byte	0
+ 602 007c 09       		.uleb128 0x9
+ 603 007d 898201   		.uleb128 0x4109
+ 604 0080 01       		.byte	0x1
+ 605 0081 11       		.uleb128 0x11
+ 606 0082 01       		.uleb128 0x1
+ 607 0083 31       		.uleb128 0x31
+ 608 0084 13       		.uleb128 0x13
+ 609 0085 01       		.uleb128 0x1
+ 610 0086 13       		.uleb128 0x13
+ 611 0087 00       		.byte	0
+ 612 0088 00       		.byte	0
+ 613 0089 0A       		.uleb128 0xa
+ 614 008a 8A8201   		.uleb128 0x410a
+ 615 008d 00       		.byte	0
+ 616 008e 02       		.uleb128 0x2
+ 617 008f 18       		.uleb128 0x18
+ 618 0090 9142     		.uleb128 0x2111
+ 619 0092 18       		.uleb128 0x18
+ 620 0093 00       		.byte	0
+ 621 0094 00       		.byte	0
+ 622 0095 0B       		.uleb128 0xb
+ 623 0096 898201   		.uleb128 0x4109
+ 624 0099 01       		.byte	0x1
+ 625 009a 11       		.uleb128 0x11
+ 626 009b 01       		.uleb128 0x1
+ 627 009c 31       		.uleb128 0x31
+ 628 009d 13       		.uleb128 0x13
+ 629 009e 00       		.byte	0
+ 630 009f 00       		.byte	0
+ 631 00a0 0C       		.uleb128 0xc
+ 632 00a1 34       		.uleb128 0x34
+ 633 00a2 00       		.byte	0
+ 634 00a3 03       		.uleb128 0x3
+ 635 00a4 0E       		.uleb128 0xe
+ 636 00a5 3A       		.uleb128 0x3a
+ 637 00a6 0B       		.uleb128 0xb
+ 638 00a7 3B       		.uleb128 0x3b
+ 639 00a8 05       		.uleb128 0x5
+ 640 00a9 49       		.uleb128 0x49
+ 641 00aa 13       		.uleb128 0x13
+ 642 00ab 3F       		.uleb128 0x3f
+ 643 00ac 19       		.uleb128 0x19
+ 644 00ad 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 13
+
+
+ 645 00ae 19       		.uleb128 0x19
+ 646 00af 00       		.byte	0
+ 647 00b0 00       		.byte	0
+ 648 00b1 0D       		.uleb128 0xd
+ 649 00b2 35       		.uleb128 0x35
+ 650 00b3 00       		.byte	0
+ 651 00b4 49       		.uleb128 0x49
+ 652 00b5 13       		.uleb128 0x13
+ 653 00b6 00       		.byte	0
+ 654 00b7 00       		.byte	0
+ 655 00b8 0E       		.uleb128 0xe
+ 656 00b9 2E       		.uleb128 0x2e
+ 657 00ba 00       		.byte	0
+ 658 00bb 3F       		.uleb128 0x3f
+ 659 00bc 19       		.uleb128 0x19
+ 660 00bd 3C       		.uleb128 0x3c
+ 661 00be 19       		.uleb128 0x19
+ 662 00bf 6E       		.uleb128 0x6e
+ 663 00c0 0E       		.uleb128 0xe
+ 664 00c1 03       		.uleb128 0x3
+ 665 00c2 0E       		.uleb128 0xe
+ 666 00c3 3A       		.uleb128 0x3a
+ 667 00c4 0B       		.uleb128 0xb
+ 668 00c5 3B       		.uleb128 0x3b
+ 669 00c6 0B       		.uleb128 0xb
+ 670 00c7 00       		.byte	0
+ 671 00c8 00       		.byte	0
+ 672 00c9 00       		.byte	0
+ 673              		.section	.debug_loc,"",%progbits
+ 674              	.Ldebug_loc0:
+ 675              	.LLST0:
+ 676 0000 04000000 		.4byte	.LVL0
+ 677 0004 0C000000 		.4byte	.LVL2
+ 678 0008 0200     		.2byte	0x2
+ 679 000a 30       		.byte	0x30
+ 680 000b 9F       		.byte	0x9f
+ 681 000c 52000000 		.4byte	.LVL11
+ 682 0010 94000000 		.4byte	.LFE63
+ 683 0014 0100     		.2byte	0x1
+ 684 0016 54       		.byte	0x54
+ 685 0017 00000000 		.4byte	0
+ 686 001b 00000000 		.4byte	0
+ 687              		.section	.debug_aranges,"",%progbits
+ 688 0000 1C000000 		.4byte	0x1c
+ 689 0004 0200     		.2byte	0x2
+ 690 0006 00000000 		.4byte	.Ldebug_info0
+ 691 000a 04       		.byte	0x4
+ 692 000b 00       		.byte	0
+ 693 000c 0000     		.2byte	0
+ 694 000e 0000     		.2byte	0
+ 695 0010 00000000 		.4byte	.LFB63
+ 696 0014 94000000 		.4byte	.LFE63-.LFB63
+ 697 0018 00000000 		.4byte	0
+ 698 001c 00000000 		.4byte	0
+ 699              		.section	.debug_ranges,"",%progbits
+ 700              	.Ldebug_ranges0:
+ 701 0000 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 14
+
+
+ 702 0004 94000000 		.4byte	.LFE63
+ 703 0008 00000000 		.4byte	0
+ 704 000c 00000000 		.4byte	0
+ 705              		.section	.debug_line,"",%progbits
+ 706              	.Ldebug_line0:
+ 707 0000 B5010000 		.section	.debug_str,"MS",%progbits,1
+ 707      02008B01 
+ 707      00000201 
+ 707      FB0E0D00 
+ 707      01010101 
+ 708              	.LASF17:
+ 709 0000 54696D65 		.ascii	"Timer_1_Start\000"
+ 709      725F315F 
+ 709      53746172 
+ 709      7400
+ 710              	.LASF29:
+ 711 000e 433A5C55 		.ascii	"C:\\Users\\slavi\\Documents\\PSoC Creator\\Ultrason"
+ 711      73657273 
+ 711      5C736C61 
+ 711      76695C44 
+ 711      6F63756D 
+ 712 003c 69635C50 		.ascii	"ic\\PPAZ-4.cydsn\000"
+ 712      50415A2D 
+ 712      342E6379 
+ 712      64736E00 
+ 713              	.LASF9:
+ 714 004c 5F5F696E 		.ascii	"__int32_t\000"
+ 714      7433325F 
+ 714      7400
+ 715              	.LASF10:
+ 716 0056 696E7433 		.ascii	"int32_t\000"
+ 716      325F7400 
+ 717              	.LASF12:
+ 718 005e 666C6F61 		.ascii	"float\000"
+ 718      7400
+ 719              	.LASF7:
+ 720 0064 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 720      206C6F6E 
+ 720      6720756E 
+ 720      7369676E 
+ 720      65642069 
+ 721              	.LASF31:
+ 722 007b 64656C61 		.ascii	"delay\000"
+ 722      7900
+ 723              	.LASF24:
+ 724 0081 4C43445F 		.ascii	"LCD_Char_1_PrintString\000"
+ 724      43686172 
+ 724      5F315F50 
+ 724      72696E74 
+ 724      53747269 
+ 725              	.LASF27:
+ 726 0098 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 726      43313120 
+ 726      352E342E 
+ 726      31203230 
+ 726      31363036 
+ 727 00cb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 15
+
+
+ 727      20726576 
+ 727      6973696F 
+ 727      6E203233 
+ 727      37373135 
+ 728 00fe 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 728      66756E63 
+ 728      74696F6E 
+ 728      2D736563 
+ 728      74696F6E 
+ 729              	.LASF5:
+ 730 0126 6C6F6E67 		.ascii	"long unsigned int\000"
+ 730      20756E73 
+ 730      69676E65 
+ 730      6420696E 
+ 730      7400
+ 731              	.LASF3:
+ 732 0138 73686F72 		.ascii	"short unsigned int\000"
+ 732      7420756E 
+ 732      7369676E 
+ 732      65642069 
+ 732      6E7400
+ 733              	.LASF32:
+ 734 014b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 734      52784275 
+ 734      66666572 
+ 734      00
+ 735              	.LASF1:
+ 736 0158 756E7369 		.ascii	"unsigned char\000"
+ 736      676E6564 
+ 736      20636861 
+ 736      7200
+ 737              	.LASF13:
+ 738 0166 646F7562 		.ascii	"double\000"
+ 738      6C6500
+ 739              	.LASF11:
+ 740 016d 75696E74 		.ascii	"uint16\000"
+ 740      313600
+ 741              	.LASF30:
+ 742 0174 6D61696E 		.ascii	"main\000"
+ 742      00
+ 743              	.LASF20:
+ 744 0179 43794465 		.ascii	"CyDelayUs\000"
+ 744      6C617955 
+ 744      7300
+ 745              	.LASF8:
+ 746 0183 756E7369 		.ascii	"unsigned int\000"
+ 746      676E6564 
+ 746      20696E74 
+ 746      00
+ 747              	.LASF21:
+ 748 0190 4563686F 		.ascii	"Echo_Read\000"
+ 748      5F526561 
+ 748      6400
+ 749              	.LASF25:
+ 750 019a 4C43445F 		.ascii	"LCD_Char_1_PrintU32Number\000"
+ 750      43686172 
+ 750      5F315F50 
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 16
+
+
+ 750      72696E74 
+ 750      5533324E 
+ 751              	.LASF19:
+ 752 01b4 436F6E74 		.ascii	"Control_Write\000"
+ 752      726F6C5F 
+ 752      57726974 
+ 752      6500
+ 753              	.LASF16:
+ 754 01c2 73697A65 		.ascii	"sizetype\000"
+ 754      74797065 
+ 754      00
+ 755              	.LASF6:
+ 756 01cb 6C6F6E67 		.ascii	"long long int\000"
+ 756      206C6F6E 
+ 756      6720696E 
+ 756      7400
+ 757              	.LASF28:
+ 758 01d9 6D61696E 		.ascii	"main.c\000"
+ 758      2E6300
+ 759              	.LASF14:
+ 760 01e0 63686172 		.ascii	"char\000"
+ 760      00
+ 761              	.LASF22:
+ 762 01e5 54696D65 		.ascii	"Timer_1_ReadCounter\000"
+ 762      725F315F 
+ 762      52656164 
+ 762      436F756E 
+ 762      74657200 
+ 763              	.LASF23:
+ 764 01f9 4C43445F 		.ascii	"LCD_Char_1_Position\000"
+ 764      43686172 
+ 764      5F315F50 
+ 764      6F736974 
+ 764      696F6E00 
+ 765              	.LASF18:
+ 766 020d 4C43445F 		.ascii	"LCD_Char_1_Init\000"
+ 766      43686172 
+ 766      5F315F49 
+ 766      6E697400 
+ 767              	.LASF2:
+ 768 021d 73686F72 		.ascii	"short int\000"
+ 768      7420696E 
+ 768      7400
+ 769              	.LASF4:
+ 770 0227 6C6F6E67 		.ascii	"long int\000"
+ 770      20696E74 
+ 770      00
+ 771              	.LASF15:
+ 772 0230 6C6F6E67 		.ascii	"long double\000"
+ 772      20646F75 
+ 772      626C6500 
+ 773              	.LASF0:
+ 774 023c 7369676E 		.ascii	"signed char\000"
+ 774      65642063 
+ 774      68617200 
+ 775              	.LASF26:
+ 776 0248 43794465 		.ascii	"CyDelay\000"
+ARM GAS  C:\Users\slavi\AppData\Local\Temp\ccT390cd.s 			page 17
+
+
+ 776      6C617900 
+ 777              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
